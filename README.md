@@ -68,7 +68,7 @@ spring.jpa.show-sql=true
 ```
 
 ### Endpoint Examples
-```
+
 1)	View all the data – pagination (0, 10) – sorted according to rate
 http://localhost:8080/api/recipes/0/10
 
@@ -90,5 +90,4 @@ http://localhost:8080/api/recipes/search/totaltime?time=150
 
 ![Image4](screenshots/img4.png)
 
-```
 
