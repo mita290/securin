@@ -3,6 +3,7 @@ package com.api.recipe.controller;
 import java.util.List;
 
 import org.springframework.boot.context.properties.bind.DefaultValue;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.api.recipe.model.Recipe;
 import com.api.recipe.service.RecipeService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/recipes")
 public class RecipeController {
@@ -55,21 +57,3 @@ public class RecipeController {
 		return rs.getRate(rating);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

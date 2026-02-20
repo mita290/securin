@@ -75,9 +75,14 @@ public class RecipeService {
 				
 				rep.setDescription(obj.get("description").asText());
 				System.out.println("description updated");
-				
-				JsonNode jn = obj.get("nutrients");		
-				rep.setNutrients(jn.toString());
+	
+				JsonNode jn = obj.get("nutrients");
+				String cleaned = jn.toString()
+				                   .replace("{", " ")
+				                   .replace("}", " ")
+				                   .replace("\"", " ");
+
+				rep.setNutrients(cleaned);
 				System.out.println("nutrients updated");
 				rep.setServes(obj.get("serves").asText());
 				System.out.println("serves updated");
@@ -94,7 +99,7 @@ public class RecipeService {
 		return repo.findAll();
 	}
 	public List<Recipe> getAll(int limit, int offset) {
-		Pageable pg = PageRequest.of(limit, offset, Sort.by("rating").descending());
+		Pageable pg = PageRequest.of(offset, limit, Sort.by("rating").descending());
 		return repo.findAll(pg).toList();
 	}
 	
@@ -119,7 +124,7 @@ public class RecipeService {
 	}
 	
 	public List<Recipe> getTotalTime(int time) {
-		return repo.findAll().stream().filter(r -> r.getTotalTime() >= time).toList();
+		return repo.findAll().stream().filter(r -> r.getTotalTime() <= time).toList();
 	}
 	
 	public List<Recipe> getRate(double rate) {

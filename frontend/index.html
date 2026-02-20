@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+
+    <!-- INTERNAL CSS FOR CLEAN TABLE UI -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f7;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        input {
+            padding: 6px 10px;
+            margin-right: 10px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 7px 12px;
+            margin-right: 5px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #357ac9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #4a90e2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        tr:nth-child(even) {
+            background: #f3f8ff;
+        }
+
+        tr:hover {
+            background: #e8f1ff;
+        }
+    </style>
+</head>
+
+<body onload="initial()">
+
+    <h1>Recipe List</h1>
+
+    <!-- SEARCH & CONTROL PANEL -->
+    <div class="controls">
+        <input id="searchTitle" placeholder="Search Title">
+        <button onclick="searchByTitle()">Search</button>
+
+        <input id="searchCal" placeholder="Calories">
+        <button onclick="searchByCalories()">Search</button>
+
+        <input id="searchTime" placeholder="Max Total Time">
+        <button onclick="searchByTime()">Search</button>
+
+        <input id="searchRate" placeholder="Minimum Rating">
+        <button onclick="searchByRating()">Search</button>
+
+        <br><br>
+
+        <input id="limit" placeholder="Limit">
+        <input id="offset" placeholder="Offset">
+        <button onclick="paged()">Load Page</button>
+
+        <button onclick="initial()">Load All</button>
+    </div>
+
+    <!-- TABLE -->
+    <table id="main">
+        <tr>
+            <th>Cuisine</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Nutrients</th>
+            <th>Prep Time</th>
+            <th>Cook Time</th>
+            <th>Rating</th>
+            <th>Serves</th>
+            <th>Total Time</th>
+        </tr>
+    </table>
+
+    <script src="index.js"></script>
+</body>
+</html>
