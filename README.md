@@ -72,23 +72,23 @@ spring.jpa.show-sql=true
 1)	View all the data – pagination (0, 10) – sorted according to rate
 http://localhost:8080/api/recipes/0/10
 
-![Image1](screenshots/img1.png)
+![Image1](./screenshots/img1.png)
 
 
 2)	Search and filter:
 http://localhost:8080/api/recipes/search/rating?rating=4.5
 
-![Image2](screenshots/img2.png)
+![Image2](./screenshots/img2.png)
 
 
 http://localhost:8080/api/recipes/search/calories?calories=389%20kcal
 
-![Image3](screenshots/img3.png)
+![Image3](./screenshots/img3.png)
 
 
 http://localhost:8080/api/recipes/search/totaltime?time=150
 
-![Image4](screenshots/img4.png)
+![Image4](./screenshots/img4.png)
 
 ```
 
